@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<record model="ir.ui.view" id="view_lenguaje_carro_form">
+			<field name="name">lenguaje_carro_form</field>
+			<field name="model">lenguaje.carro</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Carro">
+					<group>
+						<field name='color'/>
+						<field name='active'/>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="view_lenguaje_carro_tree">
+			<field name="name">lenguaje_carro_tree</field>
+			<field name="model">lenguaje.carro</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Carro">
+
+						<field name='color'/>
+						<field name='active'/>
+
+				</tree>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="action_lenguaje_carro_color">
+			<field name="name">Lenguaje Carro</field>
+			<field name="res_model">lenguaje.carro</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Lenguaje" id="menu_lenguaje" sequence="10" />
+		<menuitem name="Carro" id="menu_carro" parent="menu_lenguaje" sequence="10" />
+		<menuitem name="Color" id="menu_color" action="action_lenguaje_carro_color" parent="menu_inicio" sequence="10" />
+		
+    </data>
+</openerp>

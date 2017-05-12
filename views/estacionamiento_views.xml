@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<record model="ir.ui.view" id="view_lenguaje_estacionamiento_form">
+			<field name="name">lenguaje_estacionamiento_form</field>
+			<field name="model">lenguaje.marca</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Estacionamiento">
+					<group>
+						<field name='marca'/>
+						<field name='active'/>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="view_lenguaje_estacionamiento_tree">
+			<field name="name">lenguaje_estacionamiento_tree</field>
+			<field name="model">lenguaje.marca</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Estacionamiento">
+
+						<field name='marca'/>
+						<field name='active'/>
+
+				</tree>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="action_lenguaje_estacionamiento_marca">
+			<field name="name">Lenguaje Estacionamiento</field>
+			<field name="res_model">lenguaje.marca</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+#agregando la siguiente clase
+
+		<record model="ir.ui.view" id="view_lenguaje_estacionamiento_form">
+			<field name="name">lenguaje_estacionamiento_form</field>
+			<field name="model">lenguaje.modelo</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Estacionamiento">
+					<group>
+						<field name='modelo'/>
+						<field name='active'/>
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="view_lenguaje_estacionamiento_tree">
+			<field name="name">lenguaje_estacionamiento_tree</field>
+			<field name="model">lenguaje.modelo</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Estacionamiento">
+
+						<field name='modelo'/>
+						<field name='active'/>
+
+				</tree>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="action_lenguaje_estacionamiento_modelo">
+			<field name="name">Lenguaje Estacionamiento</field>
+			<field name="res_model">lenguaje.modelo</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<menuitem name="Lenguaje" id="menu_lenguaje" sequence="10" />
+		<menuitem name="Inicio" id="menu_inicio" parent="menu_lenguaje" sequence="10" />
+		<menuitem name="Marca" id="menu_marca" action="action_lenguaje_estacionamiento_marca" parent="menu_inicio" sequence="10" />
+		<menuitem name="Modelo" id="menu_modelo" action="action_lenguaje_estacionamiento_modelo" parent="menu_inicio" sequence="10" />
+		
+    </data>
+</openerp>
